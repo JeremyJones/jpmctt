@@ -237,9 +237,9 @@ files, but no plan for views/templates. I made assumptions about
 Python3 and tab-separated text data. I identified `Instruction` as one
 of the main objects, and distilled the overall task into three stages:
 
-# Create a list of Instructions from the data
-# Analyse the list
-# Output the results
+1. Create a list of Instructions from the data
+1. Analyse the list
+1. Output the results
 
 #### Framework
 
