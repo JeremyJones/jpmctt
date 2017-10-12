@@ -23,7 +23,7 @@ In addition to the task details (as provided in the email) the
 following assumptions have also been made:
 
 * Python 3
-* Data will contain a field delimiter (default tab), so that each record can be split()
+* Data will contain a field delimiter (default tab), so that each record can be `split()`
 * Consistent list of field names as defined in the sample data
 * Consistent data types, format, and trust of incoming data
 * The field names & other configuration information (e.g. workdays etc), for this version,
@@ -237,7 +237,7 @@ files, but no plan for views/templates. I made assumptions about
 Python3 and tab-separated text data. I identified `Instruction` as one
 of the main objects, and distilled the overall task into three stages:
 
-1. Create a list of `Instruction`s from the data
+1. Create a list of `Instruction` objects from the parsed data
 1. Analyse the list
 1. Output the results
 
@@ -245,12 +245,13 @@ of the main objects, and distilled the overall task into three stages:
 
 I created the virtual environment and stubs for the models, controller
 and test files. The main logic would be contained in the methods of a
-`Solution` object -- with methods like add_data() and reporting methods
-which return the plain text reports. The `Solution` object will
-therefore contain the list of `Instruction` objects and it will need to
-manage that list and do those calculations efficiently. The main
-controller script will be responsible for sending the data to the
-`Solution` object, and printing back out the text reports it generates.
+`Solution` object -- with methods like `add_data()` and reporting
+methods which return the plain text reports. The `Solution` object
+will therefore contain the list of `Instruction` objects and it will
+need to manage that list and do those calculations efficiently. The
+main controller script will be responsible for sending the data to the
+`Solution` object, and printing back out the text reports it
+generates.
 
 #### Data Parsing
 
@@ -264,15 +265,15 @@ files to ensure the parsing was robust.
 #### Data Adjustments
 
 I added methods to adjust each `Instruction`'s settlement date if
-necessary, and to add the USD amounts, and re-tested with the various
-data files..
+necessary, and to add the USD amounts, and re-tested with the data
+files.
 
 #### Data Analysis
 
-I added the _summarise_data() method to analyse the list into dicts
+I added the `_summarise_data()` method to analyse the list into dicts
 keyed for the information we need. The analysis is separate from the
-add_data() method in the code so that it could be triggered separately
-or by a parameter option: That way add_data() could be called multiple
+`add_data()` method in the code so that it could be triggered separately
+or by a parameter option: That way `add_data()` could be called multiple
 times, importing several data sets, with the overall analysis of that
 data deferred until it's needed for reporting etc..
 
