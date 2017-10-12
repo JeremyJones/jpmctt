@@ -67,13 +67,13 @@ This repository contains:
 
 * README.md - this file
 * main.py - **primary wrapper** which adds the data from stdin and
-  outputs the results to stdout.
-* models.py - class definitions and configuration data.
-* sample-data-longer.tsv - longer version of the sample data.
-* sample-data.tsv - sample data as provided.
+  outputs the results to stdout
+* models.py - class definitions and configuration data
+* sample-data-longer.tsv - longer version of the sample data
+* sample-data.tsv - sample data as provided
 * test.py - unittest script
 
-## Issues
+## Known Issues
 
 * Reliance on hard-coded field names + globals, particularly for
   settlement date adjustments and USD calculation.
@@ -81,10 +81,10 @@ This repository contains:
   dot attribute style.
 * The test coverage is not comprehensive.
 
-## More Information
+## Further Information
 
 Running `pydoc` on main.py, models.py or test.py will display
-additional information.
+additional documentation.
 
 On main.py:
 
@@ -212,10 +212,10 @@ On models.py:
     
     (END)
     
-For more contact:
+For additional support contact:
 
-* https://www.linkedin.com/in/jerjones/
 * https://stackoverflow.com/users/5324657/jeremy-jones
+* https://www.linkedin.com/in/jerjones/
 
 ## Commentary
 
@@ -228,7 +228,7 @@ Of the three, all are possible but the third one seems largest, so to
 keep it simple I ruled that one out and considered the first two. Of
 those two I'm drawn to the first one, mainly because the application
 is data-centric, processing rows of data and handling them in various
-ways, rather than an instant messaging application.
+ways, rather than a messaging application.
 
 #### Approach & Assumptions
 
