@@ -237,7 +237,7 @@ files, but no plan for views/templates. I made assumptions about
 Python3 and tab-separated text data. I identified `Instruction` as one
 of the main objects, and distilled the overall task into three stages:
 
-1. Create a list of Instructions from the data
+1. Create a list of `Instruction`s from the data
 1. Analyse the list
 1. Output the results
 
@@ -245,25 +245,25 @@ of the main objects, and distilled the overall task into three stages:
 
 I created the virtual environment and stubs for the models, controller
 and test files. The main logic would be contained in the methods of a
-Solution object -- with methods like add_data() and reporting methods
-which return the plain text reports. The Solution object will
-therefore contain the list of Instruction objects and it will need to
+`Solution` object -- with methods like add_data() and reporting methods
+which return the plain text reports. The `Solution` object will
+therefore contain the list of `Instruction` objects and it will need to
 manage that list and do those calculations efficiently. The main
 controller script will be responsible for sending the data to the
-Solution object, and printing back out the text reports it generates.
+`Solution` object, and printing back out the text reports it generates.
 
 #### Data Parsing
 
 With the stubs in place I created the initial sample-data.tsv file and
 sending it into the stubs. I moved on to parsing the data and casting
 some values into their correct types. With that in place I was able to
-import the data into a list of Instructions within the Solution object
-and output it to stdout, and I created some further sample data files
-to ensure the parsing was robust.
+import the data into a list of `Instruction`s within the `Solution`
+object and output it to stdout, and I created some further sample data
+files to ensure the parsing was robust.
 
 #### Data Adjustments
 
-I added methods to adjust each Instruction's settlement date if
+I added methods to adjust each `Instruction`'s settlement date if
 necessary, and to add the USD amounts, and re-tested with the various
 data files..
 
