@@ -1,4 +1,4 @@
-# jpmctt by Jeremy Jones jer******@gm*il.com 07*1* *1* **2
+# JPMCTT by Jeremy Jones
 
 ## Description
 
