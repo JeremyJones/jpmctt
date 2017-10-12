@@ -216,3 +216,69 @@ For more contact:
 
 * https://www.linkedin.com/in/jerjones/
 * https://stackoverflow.com/users/5324657/jeremy-jones
+
+## Commentary
+
+This section contains a description of major steps and the thinking
+behind key decisions.
+
+#### Tasks
+
+Of the three, all are possible but the third one seems largest, so to
+keep it simple I ruled that one out and considered the first two. Of
+those two I'm drawn to the first one, mainly because the application
+is data-centric, processing rows of data and handling them in various
+ways, rather than an instant messaging application.
+
+#### Approach & Assumptions
+
+I began with a plan for a main controller file with one or more models
+files, but no plan for views/templates. I made assumptions about
+Python3 and tab-separated text data. I identified `Instruction` as one
+of the main objects, and distilled the overall task into three stages:
+
+# Create a list of Instructions from the data
+# Analyse the list
+# Output the results
+
+#### Framework
+
+I created the virtual environment and stubs for the models, controller
+and test files. The main logic would be contained in the methods of a
+Solution object -- with methods like add_data() and reporting methods
+which return the plain text reports. The Solution object will
+therefore contain the list of Instruction objects and it will need to
+manage that list and do those calculations efficiently. The main
+controller script will be responsible for sending the data to the
+Solution object, and printing back out the text reports it generates.
+
+#### Data Parsing
+
+With the stubs in place I created the initial sample-data.tsv file and
+sending it into the stubs. I moved on to parsing the data and casting
+some values into their correct types. With that in place I was able to
+import the data into a list of Instructions within the Solution object
+and output it to stdout, and I created some further sample data files
+to ensure the parsing was robust.
+
+#### Data Adjustments
+
+I added methods to adjust each Instruction's settlement date if
+necessary, and to add the USD amounts, and re-tested with the various
+data files..
+
+#### Data Analysis
+
+I added the _summarise_data() method to analyse the list into dicts
+keyed for the information we need. The analysis is separate from the
+add_data() method in the code so that it could be triggered separately
+or by a parameter option: That way add_data() could be called multiple
+times, importing several data sets, with the overall analysis of that
+data deferred until it's needed for reporting etc..
+
+#### Report Presentation
+
+With the summary information available in dicts I just needed to
+format the information required in each report into acceptable text
+output, verify functionality with the test data, review & refactor,
+re-test, repeat, document, commit and upload.
